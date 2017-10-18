@@ -1,0 +1,13 @@
+web:
+  build: .
+  ports:
+    - "5000:5000"
+  volumes:
+    - .:/todo
+  links:
+    - db
+db:
+  #image: mongodb:2.4
+  build: db
+  ports:
+    - "27017:27017"
